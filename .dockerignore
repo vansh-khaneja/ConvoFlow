@@ -1,0 +1,81 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+docs/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Node modules (handled by frontend Dockerfile)
+node_modules/
+
+# Python cache (handled by backend Dockerfile)
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Data directories (mounted as volumes)
+backend/data/
+backend/uploads/
+frontend/.next/
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Testing
+coverage/
+.pytest_cache/
+.nyc_output/
+
+# Misc
+*.pem
+*.key
+*.cert
+

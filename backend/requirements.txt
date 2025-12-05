@@ -1,0 +1,19 @@
+openai
+groq
+ollama
+requests
+python-dotenv
+fastapi
+uvicorn
+pydantic
+qdrant-client
+psycopg[binary]
+psycopg-pool
+python-multipart
+
+tavily-python
+resend
+
+# Document processing
+pypdf
+python-docx
