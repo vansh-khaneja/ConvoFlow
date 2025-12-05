@@ -1,7 +1,7 @@
 # Convo Flow
 
 <div align="center">
-  <img src="frontend/public/brand/logo.png" alt="Convo Flow Logo" width="200" height="200">
+  <img src="frontend/public/brand/logo_with_boundary.png" alt="Convo Flow Logo" width="200" height="200">
 </div>
 
 <div align="center">
