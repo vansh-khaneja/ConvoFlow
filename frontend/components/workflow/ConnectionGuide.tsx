@@ -121,6 +121,28 @@ export default function ConnectionGuide({ queryNodeId, responseNodeId, onSkip, i
         </div>
       )}
 
+      {/* Glow on QueryNode output socket - shown until user starts dragging */}
+      {!isConnecting && queryHandlePos && (
+        <div 
+          className="absolute z-[60] pointer-events-none"
+          style={{
+            left: `${queryHandlePos.x}px`,
+            top: `${queryHandlePos.y}px`,
+            transform: 'translate(-50%, -50%)',
+            width: '24px',
+            height: '24px',
+          }}
+        >
+          <div 
+            className="absolute inset-0 rounded-full bg-[var(--primary)]/60"
+            style={{
+              boxShadow: '0 0 12px rgba(139, 92, 246, 0.6)',
+              animation: 'pulse-glow-subtle 1.5s ease-in-out infinite',
+            }}
+          ></div>
+        </div>
+      )}
+
       {/* Tooltip at QueryNode output socket - shown initially */}
       {!isConnecting && queryHandlePos && (
         <div 
