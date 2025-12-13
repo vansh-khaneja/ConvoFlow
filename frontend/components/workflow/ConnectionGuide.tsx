@@ -145,9 +145,18 @@ export default function ConnectionGuide({ queryNodeId, responseNodeId, onSkip, i
             <p className="font-semibold text-[var(--foreground)] mb-1">
               Step 5 · Drag from here
             </p>
-            <p className="text-[var(--text-muted)]">
+            <p className="text-[var(--text-muted)] mb-2">
               Click and drag from this <span className="font-semibold">output socket</span> to connect.
             </p>
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={onSkip}
+                className="text-[11px] text-[var(--text-muted)] hover:text-[var(--foreground)]"
+              >
+                Skip
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -195,9 +204,18 @@ export default function ConnectionGuide({ queryNodeId, responseNodeId, onSkip, i
               <p className="font-semibold text-[var(--foreground)] mb-1">
                 Drop here to connect
               </p>
-              <p className="text-[var(--text-muted)]">
+              <p className="text-[var(--text-muted)] mb-2">
                 Drag and connect to this <span className="font-semibold">input socket</span>.
               </p>
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={onSkip}
+                  className="text-[11px] text-[var(--text-muted)] hover:text-[var(--foreground)]"
+                >
+                  Skip
+                </button>
+              </div>
             </div>
           </div>
         </>

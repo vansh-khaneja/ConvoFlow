@@ -234,6 +234,11 @@ function WorkflowBuilderContent() {
     // Don't auto-close - let user see the chat preview tip and close it manually
   };
 
+  const handleTourTipClose = () => {
+    // When user clicks "Got it!" in step 7, actually complete the tour
+    handleSkipTour();
+  };
+
   const handleRunButtonHintClose = () => {
     setShowRunButtonHint(false);
     // Also mark tour as completed if we're in tour step 6
@@ -515,7 +520,7 @@ function WorkflowBuilderContent() {
           isExecuting={isExecuting}
           sidebarOffset={isConfigSidebarOpen ? 420 : showNodeSidebar ? 384 : 0}
           showTourTip={!tourCompleted && tourStep === 7}
-          onTourTipClose={handleTourComplete}
+          onTourTipClose={handleTourTipClose}
         />
       )}
 

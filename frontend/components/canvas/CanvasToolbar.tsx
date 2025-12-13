@@ -275,20 +275,13 @@ export default function CanvasToolbar({
                 <p className="text-[var(--text-muted)] mb-2">
                   Click <span className="font-semibold">Run</span> to test your chatbot workflow.
                 </p>
-                <div className="flex justify-end gap-2">
+                <div className="flex justify-end">
                   <button
                     type="button"
                     onClick={onRunTourSkip}
                     className="text-[11px] text-[var(--text-muted)] hover:text-[var(--foreground)]"
                   >
                     Skip
-                  </button>
-                  <button
-                    type="button"
-                    onClick={onRunTourNext}
-                    className="text-[11px] font-medium px-2 py-1 rounded bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)]"
-                  >
-                    Done
                   </button>
                 </div>
               </div>
