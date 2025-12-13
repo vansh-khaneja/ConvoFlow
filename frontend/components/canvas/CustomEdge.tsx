@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { EdgeProps, getBezierPath, EdgeLabelRenderer, BaseEdge, useReactFlow } from '@xyflow/react';
 import { Unlink } from 'lucide-react';
 
@@ -17,6 +17,7 @@ export default function CustomEdge({
   selected,
 }: EdgeProps) {
   const { setEdges } = useReactFlow();
+  const [isHovered, setIsHovered] = useState(false);
   
   const [edgePath, labelX, labelY] = getBezierPath({
     sourceX,
@@ -32,11 +33,29 @@ export default function CustomEdge({
     setEdges((edges) => edges.filter((edge) => edge.id !== id));
   };
 
+  const showDeleteButton = selected || isHovered;
+
   return (
     <>
-      <BaseEdge id={id} path={edgePath} markerEnd={markerEnd} style={style} />
+      <BaseEdge 
+        id={id} 
+        path={edgePath} 
+        markerEnd={markerEnd} 
+        style={style}
+      />
+      {/* Invisible wider path for hover detection */}
+      <path
+        d={edgePath}
+        fill="none"
+        stroke="transparent"
+        strokeWidth={20}
+        className="cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        style={{ pointerEvents: 'stroke' }}
+      />
       <EdgeLabelRenderer>
-        {selected && (
+        {showDeleteButton && (
           <div
             style={{
               position: 'absolute',
@@ -44,6 +63,8 @@ export default function CustomEdge({
               pointerEvents: 'all',
             }}
             className="nodrag nopan"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             <button
               className="w-6 h-6 bg-red-500 hover:bg-red-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 border border-red-400"
