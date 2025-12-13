@@ -80,10 +80,17 @@ export default function MobileBlocker() {
         overflow: 'hidden',
         boxSizing: 'border-box',
         margin: 0,
-        padding: '1rem'
+        padding: '1rem',
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        paddingTop: '15vh'
       }}
     >
-      <div className="max-w-md w-full text-center space-y-6 overflow-y-auto max-h-full" style={{ maxHeight: 'calc(100dvh - 2rem)' }}>
+      <div className="max-w-md w-full text-center space-y-6 overflow-y-auto" style={{ 
+        maxHeight: 'calc(100dvh - 2rem)',
+        margin: '0 auto'
+      }}>
         {/* Icon */}
         <div className="flex justify-center">
           <div className="relative">
